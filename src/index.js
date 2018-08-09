@@ -1,10 +1,10 @@
 const getLeftChildIndex = index => index * 2 + 1;
 const getRightChildIndex = index => index * 2 + 2;
+const isDefined = value => typeof value !== 'undefined';
 const getBaseLog = ({ base, value }) => (Math.log(value) / Math.log(base));
 const getLevel = index => Math.ceil(getBaseLog({ base: 2, value: index + 2 }));
 
-
-const branch = ({
+const outputNode = ({
   index,
   values,
   nodeSymbol,
@@ -15,38 +15,36 @@ const branch = ({
   const level = getLevel(index);
   const indentation = new Array((level - 1) * indentationSize + 1).join(' ');
   output += `${indentation}${nodeSymbol} ${value}\n`;
-  const rightIndex = getRightChildIndex(index);
-  const leftIndex = getLeftChildIndex(index);
-  if (values[rightIndex] || values[leftIndex]) {
-    output += branch({
-      output,
+  const rightChildIndex = getRightChildIndex(index);
+  const leftChildIndex = getLeftChildIndex(index);
+  if (isDefined(values[rightChildIndex]) || isDefined(values[leftChildIndex])) {
+    output += outputNode({
       values,
       nodeSymbol,
       indentationSize,
-      index: rightIndex,
+      index: rightChildIndex,
     });
-    output += branch({
-      output,
+    output += outputNode({
       values,
       nodeSymbol,
       indentationSize,
-      index: leftIndex,
+      index: leftChildIndex,
     });
   }
 
   return output;
 };
 
-const bstring = ({
+const formatBinaryTree = ({
   values,
-  nodeSymbol = '*',
+  nodeSymbol = '•',
   indentationSize = 2,
-}) => branch({
-  index: 0,
+}) => outputNode({
   values,
   nodeSymbol,
   indentationSize,
+  index: 0,
 });
 
 
-export default bstring;
+export default formatBinaryTree;

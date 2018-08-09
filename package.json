@@ -1,17 +1,22 @@
 {
-  "name": "bstring",
+  "name": "format-binary-tree",
   "version": "0.0.0-development",
-  "description": "BST array implementation to string",
-  "keywords": [],
-  "homepage": "https://github.com/jaebradley/bstring#readme",
+  "description": "Array-based binary trees to string",
+  "keywords": [
+    "array",
+    "binary tree",
+    "format array",
+    "format binary tree"
+  ],
+  "homepage": "https://github.com/jaebradley/format-binary-tree#readme",
   "bugs": {
-    "url": "https://github.com/jaebradley/bstring/issues"
+    "url": "https://github.com/jaebradley/format-binary-tree/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaebradley/bstring.git"
+    "url": "git+https://github.com/jaebradley/format-binary-tree.git"
   },
-  "license": "",
+  "license": "MIT",
   "author": {
     "name": "jae.b.bradley@gmail.com"
   },
@@ -71,6 +76,6 @@
     "semantic-release": "^15.1.7",
     "travis-deploy-once": "^4.4.1"
   },
-  "_id": "bstring@0.0.0-development",
-  "readme": "https://github.com/jaebradley/bstring#readme"
+  "_id": "format-binary-tree@0.0.0-development",
+  "readme": "https://github.com/jaebradley/format-binary-tree#readme"
 }

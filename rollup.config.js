@@ -14,12 +14,12 @@ const config = {
     {
       file: 'build/index.js',
       format: 'umd',
-      name: 'bstring',
+      name: 'formatBinaryTree',
     },
     {
       file: 'build/index.cjs.js',
       format: 'cjs',
-      name: 'bstring',
+      name: 'formatBinaryTree',
     },
     {
       file: 'build/index.esm.js',
